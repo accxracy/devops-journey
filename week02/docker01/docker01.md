@@ -49,8 +49,6 @@ RUN pip install -r requirements.txt
 
 COPY app.py .
 
-ENV FLASK_APP=app.py
-
 EXPOSE 8080
 
 ENTRYPOINT ["flask", "run", "--host=0.0.0.0", "--port=8080"]
@@ -62,7 +60,6 @@ ENTRYPOINT ["flask", "run", "--host=0.0.0.0", "--port=8080"]
 - `WORKDIR /app` — рабочая директория внутри контейнера
 - `COPY` — копируем зависимости и приложение
 - `RUN pip install` — устанавливаем зависимости
-- `ENV FLASK_APP=app.py` — указываем Flask-приложение
 - `EXPOSE 8080` — открываем порт 8080
 - `ENTRYPOINT` — запускаем сервер Flask
 
